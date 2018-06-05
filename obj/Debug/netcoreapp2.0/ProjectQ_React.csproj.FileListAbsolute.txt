@@ -1,0 +1,24 @@
+C:\Users\Henrique Andrade\Documents\Visual Studio 2017\Projects\ProjectQ_React\ProjectQ_React\bin\Debug\netcoreapp2.0\electron.manifest.json
+C:\Users\Henrique Andrade\Documents\Visual Studio 2017\Projects\ProjectQ_React\ProjectQ_React\bin\Debug\netcoreapp2.0\ProjectQ_React.deps.json
+C:\Users\Henrique Andrade\Documents\Visual Studio 2017\Projects\ProjectQ_React\ProjectQ_React\bin\Debug\netcoreapp2.0\ProjectQ_React.runtimeconfig.json
+C:\Users\Henrique Andrade\Documents\Visual Studio 2017\Projects\ProjectQ_React\ProjectQ_React\bin\Debug\netcoreapp2.0\ProjectQ_React.runtimeconfig.dev.json
+C:\Users\Henrique Andrade\Documents\Visual Studio 2017\Projects\ProjectQ_React\ProjectQ_React\bin\Debug\netcoreapp2.0\ProjectQ_React.dll
+C:\Users\Henrique Andrade\Documents\Visual Studio 2017\Projects\ProjectQ_React\ProjectQ_React\bin\Debug\netcoreapp2.0\ProjectQ_React.pdb
+C:\Users\Henrique Andrade\Documents\Visual Studio 2017\Projects\ProjectQ_React\ProjectQ_React\obj\Debug\netcoreapp2.0\ProjectQ_React.csproj.CoreCompileInputs.cache
+C:\Users\Henrique Andrade\Documents\Visual Studio 2017\Projects\ProjectQ_React\ProjectQ_React\obj\Debug\netcoreapp2.0\ProjectQ_React.AssemblyInfoInputs.cache
+C:\Users\Henrique Andrade\Documents\Visual Studio 2017\Projects\ProjectQ_React\ProjectQ_React\obj\Debug\netcoreapp2.0\ProjectQ_React.AssemblyInfo.cs
+C:\Users\Henrique Andrade\Documents\Visual Studio 2017\Projects\ProjectQ_React\ProjectQ_React\obj\Debug\netcoreapp2.0\ProjectQ_React.dll
+C:\Users\Henrique Andrade\Documents\Visual Studio 2017\Projects\ProjectQ_React\ProjectQ_React\obj\Debug\netcoreapp2.0\ProjectQ_React.pdb
+C:\Users\Henrique Andrade\Documents\Visual Studio 2017\Projects\ProjectQ_React\ProjectQ_React\obj\Debug\netcoreapp2.0\ProjectQ_React.csprojResolveAssemblyReference.cache
+C:\dotnetoperador\ProjectQ_React\ProjectQ_React\ProjectQ_React\bin\Debug\netcoreapp2.0\electron.manifest.json
+C:\dotnetoperador\ProjectQ_React\ProjectQ_React\ProjectQ_React\bin\Debug\netcoreapp2.0\ProjectQ_React.deps.json
+C:\dotnetoperador\ProjectQ_React\ProjectQ_React\ProjectQ_React\bin\Debug\netcoreapp2.0\ProjectQ_React.runtimeconfig.json
+C:\dotnetoperador\ProjectQ_React\ProjectQ_React\ProjectQ_React\bin\Debug\netcoreapp2.0\ProjectQ_React.runtimeconfig.dev.json
+C:\dotnetoperador\ProjectQ_React\ProjectQ_React\ProjectQ_React\bin\Debug\netcoreapp2.0\ProjectQ_React.dll
+C:\dotnetoperador\ProjectQ_React\ProjectQ_React\ProjectQ_React\bin\Debug\netcoreapp2.0\ProjectQ_React.pdb
+C:\dotnetoperador\ProjectQ_React\ProjectQ_React\ProjectQ_React\obj\Debug\netcoreapp2.0\ProjectQ_React.csprojAssemblyReference.cache
+C:\dotnetoperador\ProjectQ_React\ProjectQ_React\ProjectQ_React\obj\Debug\netcoreapp2.0\ProjectQ_React.csproj.CoreCompileInputs.cache
+C:\dotnetoperador\ProjectQ_React\ProjectQ_React\ProjectQ_React\obj\Debug\netcoreapp2.0\ProjectQ_React.AssemblyInfoInputs.cache
+C:\dotnetoperador\ProjectQ_React\ProjectQ_React\ProjectQ_React\obj\Debug\netcoreapp2.0\ProjectQ_React.AssemblyInfo.cs
+C:\dotnetoperador\ProjectQ_React\ProjectQ_React\ProjectQ_React\obj\Debug\netcoreapp2.0\ProjectQ_React.dll
+C:\dotnetoperador\ProjectQ_React\ProjectQ_React\ProjectQ_React\obj\Debug\netcoreapp2.0\ProjectQ_React.pdb
