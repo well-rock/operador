@@ -8,6 +8,7 @@ interface QueueStatus {
     loading: boolean;
     queueIdentity: QueueIdentity;
     queueItem: QueueItem;
+    queueItemFila: QueueItemFila;
     errorMessage: string;
     fetchFailed: boolean;
 }
@@ -21,16 +22,19 @@ interface QueueIdentity {
 
 interface QueueItem {
     Id: number;
-    Ticket: string;
-    Position: number;
-    QueueIdentity: string;
-    QueueCompany: string;
+    Type: string;
+    DataAdded: Date;
+    QueueIdentityId: number;
 }
-
+interface QueueItemFila{
+Id: number;
+Ticket: string;
+}
 export class Queue extends React.Component<RouteComponentProps<{}>, QueueStatus>{
     constructor() {
         super();
-        this.state = { queueIdentity: {} as QueueIdentity,queueItem: {} as QueueItem,queues: [], loading: true, errorMessage: "", fetchFailed: false };
+        this.state = { queueIdentity: {} as QueueIdentity,queueItem: {} as QueueItem,queues: [],
+        queueItemFila: {} as QueueItemFila, loading: true, errorMessage: "", fetchFailed: false };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     handleSubmit(event: any) {
@@ -49,7 +53,7 @@ export class Queue extends React.Component<RouteComponentProps<{}>, QueueStatus>
         requestHeader.append('Authorization', 'Bearer ' + sessionStorage.getItem('access_token'));
 
         console.log('Fetching data from API')
-        fetch('https://projectq-api.azurewebsites.net/api/Queue/Identity/' + substringId, {
+        fetch('https://projectq-api.azurewebsites.net/api/Queue/Items/Identity/' + substringId, {
             headers: requestHeader,
             method: 'GET'
         }).then(function (response) {
@@ -63,23 +67,56 @@ export class Queue extends React.Component<RouteComponentProps<{}>, QueueStatus>
         }).then(response => response.json() as Promise<QueueIdentity>)
             .then(data => {
                 this.setState({ queueIdentity: data, loading: false })
-                console.log('Fetched data from API')
+                console.log(this.setState)
             }).catch(err => {
                 console.log(err);
                 this.setState({ fetchFailed: true, errorMessage: err.message, loading: false });
             });
     }
 
+    percorrer(val: string)
+    {
+        var count = 0;
+        //receber o vetor da api
+        //foreach
+        //if menor, tipo é igual ao 
+
+        return count;
+    }
+
+    deletar(id: number)
+    {
+        
+    }
+
+
+    verificarTipo(val: number)
+    {
+        let count: string = "0";
+        count = sessionStorage.getItem('valor') + "";
+
+        if(parseInt(count) < val )
+        {
+            //codigo chamar type N
+            //int menor = this.percorrer("N")
+
+           // sessionStorage.getItem('valor') ++
+        } else {
+            //tipo P
+
+            // session volta pra 0
+        }
+    }
+
     chamaFila() {
-
         this.setState({ loading: true });
-
+        //var substringIdItem = this.setState.QueueItem.Id;
         
         const requestHeader = new Headers();
         requestHeader.append('Authorization', 'Bearer ' + sessionStorage.getItem('access_token'));
 
         console.log('Fetching data from API')
-        fetch('https://projectq-api.azurewebsites.net/api/Queue/Item/40', {
+        fetch('https://projectq-api.azurewebsites.net/api/Queue/Item/56', {
             headers: requestHeader,
             method: 'GET'
         }).then(function (response) {
@@ -93,14 +130,15 @@ export class Queue extends React.Component<RouteComponentProps<{}>, QueueStatus>
         }).then(response => response.json() as Promise<QueueItem>)
             .then(data => {
                 this.setState({ queueItem: data, loading: false })
-                console.log('Fetched data from API')
+                console.log(data)
             }).catch(err => {
                 console.log(err);
             });
-    }
+            console.log(this.state);
+        }
 
     render() {
-        const { queueIdentity, queueItem, loading, errorMessage, fetchFailed } = this.state;
+        const { queueIdentity, queueItem, queueItemFila, loading, errorMessage, fetchFailed } = this.state;
 
         if (loading) {
             return <div className='container'>
@@ -115,7 +153,7 @@ export class Queue extends React.Component<RouteComponentProps<{}>, QueueStatus>
         if (fetchFailed) {
             return <h3 className='text-center'>{errorMessage}</h3>;
         }
-
+        
         return (<form  onSubmit={this.handleSubmit}>
             <div className="card mb-3">
         
@@ -140,7 +178,7 @@ export class Queue extends React.Component<RouteComponentProps<{}>, QueueStatus>
                     </button></td>
                 <td></td>
                 <td></td>
-                <td><p>{queueItem.Ticket}</p></td>
+                <td><p>{queueItemFila.Ticket}</p></td>
                 <td></td>
                 <td><button type="button" className="btn btn-default btn-lg">
                       <span id="recall" className="glyphicon glyphicon-repeat" aria-hidden="true"></span>

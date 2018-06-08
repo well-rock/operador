@@ -53,7 +53,7 @@ export class Login extends React.Component<RouteComponentProps<{}>, User> {
                 sessionStorage.setItem('user', data.userName);
                 sessionStorage.setItem('access_token', data.access_token);
                 sessionStorage.setItem('token_type', data.token_type);
-
+                sessionStorage.setItem('valor', '0');
                 console.log('Welcome ' + sessionStorage.getItem('user'));
 
                 this.props.history.push('/Home');

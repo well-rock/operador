@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "970749a467eec283d520"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "7dc54dee31a0fa7a424a"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -8045,6 +8045,7 @@ var Login = (function (_super) {
             sessionStorage.setItem('user', data.userName);
             sessionStorage.setItem('access_token', data.access_token);
             sessionStorage.setItem('token_type', data.token_type);
+            sessionStorage.setItem('valor', '0');
             console.log('Welcome ' + sessionStorage.getItem('user'));
             _this.props.history.push('/Home');
             //location.href = '/';
@@ -8176,7 +8177,8 @@ var Queue = (function (_super) {
     __extends(Queue, _super);
     function Queue() {
         var _this = _super.call(this) || this;
-        _this.state = { queueIdentity: {}, queueItem: {}, queues: [], loading: true, errorMessage: "", fetchFailed: false };
+        _this.state = { queueIdentity: {}, queueItem: {}, queues: [],
+            queueItemFila: {}, loading: true, errorMessage: "", fetchFailed: false };
         _this.handleSubmit = _this.handleSubmit.bind(_this);
         return _this;
     }
@@ -8194,7 +8196,7 @@ var Queue = (function (_super) {
         var requestHeader = new Headers();
         requestHeader.append('Authorization', 'Bearer ' + sessionStorage.getItem('access_token'));
         console.log('Fetching data from API');
-        fetch('https://projectq-api.azurewebsites.net/api/Queue/Identity/' + substringId, {
+        fetch('https://projectq-api.azurewebsites.net/api/Queue/Items/Identity/' + substringId, {
             headers: requestHeader,
             method: 'GET'
         }).then(function (response) {
@@ -8208,19 +8210,42 @@ var Queue = (function (_super) {
         }).then(function (response) { return response.json(); })
             .then(function (data) {
             _this.setState({ queueIdentity: data, loading: false });
-            console.log('Fetched data from API');
+            console.log(_this.setState);
         }).catch(function (err) {
             console.log(err);
             _this.setState({ fetchFailed: true, errorMessage: err.message, loading: false });
         });
     };
+    Queue.prototype.percorrer = function (val) {
+        var count = 0;
+        //receber o vetor da api
+        //foreach
+        //if menor, tipo é igual ao 
+        return count;
+    };
+    Queue.prototype.deletar = function (id) {
+    };
+    Queue.prototype.verificarTipo = function (val) {
+        var count = "0";
+        count = sessionStorage.getItem('valor') + "";
+        if (parseInt(count) < val) {
+            //codigo chamar type N
+            //int menor = this.percorrer("N")
+            // sessionStorage.getItem('valor') ++
+        }
+        else {
+            //tipo P
+            // session volta pra 0
+        }
+    };
     Queue.prototype.chamaFila = function () {
         var _this = this;
         this.setState({ loading: true });
+        //var substringIdItem = this.setState.QueueItem.Id;
         var requestHeader = new Headers();
         requestHeader.append('Authorization', 'Bearer ' + sessionStorage.getItem('access_token'));
         console.log('Fetching data from API');
-        fetch('https://projectq-api.azurewebsites.net/api/Queue/Item/40', {
+        fetch('https://projectq-api.azurewebsites.net/api/Queue/Item/56', {
             headers: requestHeader,
             method: 'GET'
         }).then(function (response) {
@@ -8234,13 +8259,14 @@ var Queue = (function (_super) {
         }).then(function (response) { return response.json(); })
             .then(function (data) {
             _this.setState({ queueItem: data, loading: false });
-            console.log('Fetched data from API');
+            console.log(data);
         }).catch(function (err) {
             console.log(err);
         });
+        console.log(this.state);
     };
     Queue.prototype.render = function () {
-        var _a = this.state, queueIdentity = _a.queueIdentity, queueItem = _a.queueItem, loading = _a.loading, errorMessage = _a.errorMessage, fetchFailed = _a.fetchFailed;
+        var _a = this.state, queueIdentity = _a.queueIdentity, queueItem = _a.queueItem, queueItemFila = _a.queueItemFila, loading = _a.loading, errorMessage = _a.errorMessage, fetchFailed = _a.fetchFailed;
         if (loading) {
             return __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", { className: 'container' },
                 __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", { className: 'row justify-content-center' },
@@ -8272,7 +8298,7 @@ var Queue = (function (_super) {
                             __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("td", null),
                             __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("td", null),
                             __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("td", null,
-                                __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("p", null, queueItem.Ticket)),
+                                __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("p", null, queueItemFila.Ticket)),
                             __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("td", null),
                             __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("td", null,
                                 __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("button", { type: "button", className: "btn btn-default btn-lg" },
